@@ -1,0 +1,45 @@
+/******************************************************************************
+Desarrollar una clase con dos métodos, uno para la carga de dos enteros.
+Definir un método privado que le enviemos los valores ingresados por teclado
+y nos retorne el mayor de ellos.
+
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+
+class Ejercicio2 {
+private:
+    int mayor(int num1, int num2);
+public:
+    void carga();
+};
+
+int Ejercicio2::mayor(int num1, int num2)
+{
+   if(num1>num2)
+   {
+       return num1;
+   }else {
+       return num2;
+   }
+}
+
+void Ejercicio2::carga()
+{
+    int x1,x2;
+    cout << "Escriba el primer numero entero"<< endl;
+    cin >> x1;
+    cout << "Escriba el segundo numero entero"<< endl;
+    cin >> x2;
+    int resultado=mayor(x1,x2);
+    cout << "El numero mayor es: ";
+    cout << resultado;
+    
+}
+
+int main()
+{
+   Ejercicio2 ejercicios2;
+   ejercicios2.carga();
+}
