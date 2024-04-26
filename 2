@@ -1,0 +1,68 @@
+/*
+Definir un vector de 5 componentes de tipo float que representen 
+las alturas de 5 personas.
+Obtener el promedio de las mismas.
+Contar cuántas personas son más altas que el promedio y cuántas más bajas.
+
+*/
+
+#include "iostream"
+using namespace std;
+
+class PruebaVector {
+private:
+  float alturas[5];
+  float promedio;
+public:
+  void cargar();
+  void sacarPromedio();
+  void mayorOmenor();
+};
+
+void PruebaVector::cargar()
+{
+    for(int i=0;i<5;i++)
+    {
+        cout << "Ingrese la altura de las personas" << endl;
+        cin >> alturas[i];
+    }
+}
+
+void PruebaVector::sacarPromedio()
+{
+    float suma;
+    suma=0;
+    for(int i=0;i<5;i++)
+    {
+        suma=suma+alturas[i];
+    }
+    promedio=suma/5;
+    cout << "El promedio de altura es: " << promedio << endl;
+}
+
+void PruebaVector::mayorOmenor()
+{
+    int mayor,menor;
+    mayor=0;
+    menor=0;
+    for(int i=0;i<5;i++)
+    {
+        if(alturas[i]<promedio)
+        {
+           menor = menor +1 ;
+        }else{
+            mayor = mayor +1;
+        }
+    }
+    cout << mayor << " son mas altas que el promedio" << endl;
+    cout << menor << " son menos altas que el promedio" << endl;
+}
+
+int main()
+{
+    PruebaVector prueba1;
+    prueba1.cargar();
+    prueba1.sacarPromedio();
+    prueba1.mayorOmenor();
+    return 0;
+}
